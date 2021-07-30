@@ -172,22 +172,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+        <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ol>
 <li>注册github账号</li>
 <li>安装了node.js</li>
 <li>安装了git客户端</li>
-</ul>
-<h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><h4 id="创建一个github仓库"><a href="#创建一个github仓库" class="headerlink" title="创建一个github仓库"></a>创建一个github仓库</h4><p>首先创建一个username.github.io。username就是github账号用户名。</p>
-<h4 id="配置SSHKey"><a href="#配置SSHKey" class="headerlink" title="配置SSHKey"></a>配置SSHKey</h4><p>在C:\Users\用户名.ssh下有id_rsa.pub文件，将文件的内容拷贝到 github。</p>
+</ol>
+<h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><h5 id="创建一个github仓库"><a href="#创建一个github仓库" class="headerlink" title="创建一个github仓库"></a>创建一个github仓库</h5><p>首先创建一个username.github.io。username就是github账号用户名。</p>
+<h5 id="配置SSHKey"><a href="#配置SSHKey" class="headerlink" title="配置SSHKey"></a>配置SSHKey</h5><p>在C:\Users\用户名.ssh下有id_rsa.pub文件，将文件的内容拷贝到 github。</p>
 <p>点击右上角-&gt;setting-&gt;SSH and GPG keys-&gt;SSH Keys-&gt;new SSH key</p>
 <p>将密钥拷贝到这个地方</p>
-<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>在磁盘创建一个hexo的文件夹，然后使用管理员打开powerShell进入到这个文件夹下，执行以下命令：</p>
+<h5 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h5><p>在磁盘创建一个hexo的文件夹，然后使用管理员打开powerShell进入到这个文件夹下，执行以下命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo #下载</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo init 			#初始化</span><br><span class="line">hexo g				#生成网站静态文件到默认设置的 public 文件夹</span><br><span class="line">hexo s				#启动本地服务器，用于预览主题。默认地址： http://localhost:4000/</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>执行完成后我们可以在本地访问<a target="_blank" rel="noopener" href="http://localhost:4000/%E6%9D%A5%E9%A2%84%E8%A7%88%E3%80%82">http://localhost:4000/来预览。</a></p>
+<p>执行完成后我们可以在本地访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> </p>
 </blockquote>
-<h4 id="hexo主题修改"><a href="#hexo主题修改" class="headerlink" title="hexo主题修改"></a>hexo主题修改</h4><blockquote>
+<h5 id="hexo主题修改"><a href="#hexo主题修改" class="headerlink" title="hexo主题修改"></a>hexo主题修改</h5><blockquote>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> 主题网址</p>
 </blockquote>
 <p>在hexo目录（根目录）下执行：</p>
@@ -201,7 +201,7 @@
 <p>然后执行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g				</span><br><span class="line">hexo s			</span><br></pre></td></tr></table></figure>
 
-<h4 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h4><p>首先修改根目录下的_config.yml文件</p>
+<h5 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h5><p>首先修改根目录下的_config.yml文件</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <p>然后执行：</p>
