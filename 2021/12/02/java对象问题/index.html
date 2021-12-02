@@ -15,15 +15,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="对象在内存中的储存布局">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20211201184818457.png">
-<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20211201185101332.png">
-<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20211201190101646.png">
-<meta property="og:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20211202093932703.png">
+<meta property="og:image" content="http://example.com/.com//image-20211202143149385.png">
+<meta property="og:image" content="http://example.com/.com//image-20211201185101332.png">
+<meta property="og:image" content="http://example.com/.com//image-20211202145302952.png">
+<meta property="og:image" content="http://example.com/.com//image-20211202150945733.png">
 <meta property="article:published_time" content="2021-12-02T07:28:00.000Z">
-<meta property="article:modified_time" content="2021-12-02T07:31:19.769Z">
+<meta property="article:modified_time" content="2021-12-02T07:47:28.674Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/DELL/AppData/Roaming/Typora/typora-user-images/image-20211201184818457.png">
+<meta name="twitter:image" content="http://example.com/.com//image-20211202143149385.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -181,8 +181,8 @@
       
         <h3 id="对象在内存中的储存布局"><a href="#对象在内存中的储存布局" class="headerlink" title="对象在内存中的储存布局"></a>对象在内存中的储存布局</h3><span id="more"></span>
 
-<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20211201184818457.png" alt="image-20211201184818457"></p>
-<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20211201185101332.png" alt="image-20211201185101332"></p>
+<p><img src="/.com//image-20211202143149385.png" alt="image-20211202143149385"></p>
+<p><img src="/.com//image-20211201185101332.png" alt="image-20211201185101332"></p>
 <blockquote>
 <p>以上两张图分别为内存布局和打印结构。</p>
 </blockquote>
@@ -199,7 +199,7 @@
 <li>第三行为4字节的class point 没有压缩的时候为8字节</li>
 <li>后面的都是成员变量的占用，其中Boolean类型为1字节，补齐为4字节，引用类型存放指针</li>
 </ol>
-<h3 id="对象定位"><a href="#对象定位" class="headerlink" title="对象定位"></a>对象定位</h3><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20211201190101646.png" alt="image-20211201190101646"></p>
+<h3 id="对象定位"><a href="#对象定位" class="headerlink" title="对象定位"></a>对象定位</h3><p><img src="/.com//image-20211202145302952.png" alt="image-20211202145302952"></p>
 <blockquote>
 <p>存在两种定位方式，hot spot默认直接指针方式</p>
 </blockquote>
@@ -208,7 +208,7 @@
 <li>句柄方式中t的指针在对象被移动的时候不会修改指针</li>
 <li>直接指针速度更快</li>
 </ol>
-<h3 id="对象分配"><a href="#对象分配" class="headerlink" title="对象分配"></a>对象分配</h3><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20211202093932703.png" alt="image-20211202093932703"></p>
+<h3 id="对象分配"><a href="#对象分配" class="headerlink" title="对象分配"></a>对象分配</h3><p><img src="/.com//image-20211202150945733.png" alt="image-20211202150945733"></p>
 <ol>
 <li>对象创建的时候会判断是否能在栈中分配，栈中的对象不需要GC，使用完会自动弹出。分配的条件有两个：<ol>
 <li>逃逸分析：生存周期是否逃出该方法，是否被其它对象引用。这些对象被弹出会导致空指针异常</li>
@@ -333,6 +333,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/12/02/ceshi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ceshi
+        
+      </div>
+    </a>
   
   
     <a href="/2021/07/30/my-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
