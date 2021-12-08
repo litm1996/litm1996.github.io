@@ -18,10 +18,10 @@
 <meta property="og:image" content="https://s2.loli.net/2021/12/07/52aq7AhEzSJ4ev6.png">
 <meta property="og:image" content="https://s2.loli.net/2021/12/08/aKpWgN2Bx4PS5RY.png">
 <meta property="og:image" content="https://s2.loli.net/2021/12/08/HdTDe2run5kMWZR.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1286748/201809/1286748-20180904145413816-322154283.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1286748/201809/1286748-20180904145435850-1646811405.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/08/24pVWRDMOhXweSL.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/08/Z34YB9KIQp2sb6A.png">
 <meta property="article:published_time" content="2021-12-08T09:42:28.000Z">
-<meta property="article:modified_time" content="2021-12-08T09:55:53.291Z">
+<meta property="article:modified_time" content="2021-12-08T10:00:36.453Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
@@ -292,9 +292,9 @@
 
 <h4 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h4><p>​        对于任何一个类而言，只有通过类加载器和类本身才能够在JVM中确定唯一性。每一个内加载器都有其唯一的空间，不同的类加载器加载同一个类，这两个内存中的类是不相等的。通俗的说：比较两个类是否相等，只能在同一个类加载器的前提下进行比较，否则加载器不同，类就一定不相等。</p>
 <p>​        由于不同的类加载器加载相同的类会导致内存中存在重复的类，这样使java最基础的行为无法保证，因此需要一种方法来保证类的唯一性。</p>
-<p><img src="https://img2018.cnblogs.com/blog/1286748/201809/1286748-20180904145413816-322154283.png" alt="img"></p>
+<p><img src="https://s2.loli.net/2021/12/08/24pVWRDMOhXweSL.png" alt="1286748-20180904145413816-322154283.png"></p>
 <p>​        图中展示的这种类加载器之间的层级关系，被称为双亲委派模型，另外他们之间的关系不是继承，而是用组合关系来复用父加载器的部分代码。主要原理是 模型中除启动类加载器之外的类加载器都要有自己的父类加载器。其工作过程是：一个类加载器收到类加载请求，他不会马上去加载这个类，而是将这个请求转给自己的父加载器，每一层都如此，直到顶层的启动类加载器，当父类加载器无法完成这个类的加载（在他的搜索范围内，找不到该类），子加载器才开始尝试加载这个类。这样就可以保证，一个类只能被一个类加载器加载，保证了该类在内存中的唯一性。其实现代码在java.lang.ClassLoader的loadClass方法中，如下图：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1286748/201809/1286748-20180904145435850-1646811405.png" alt="img"></p>
+<p><img src="https://s2.loli.net/2021/12/08/Z34YB9KIQp2sb6A.png" alt="1286748-20180904145435850-1646811405.png"></p>
 <h5 id="线程上下文类加载器"><a href="#线程上下文类加载器" class="headerlink" title="线程上下文类加载器"></a>线程上下文类加载器</h5><p>​        并非所有的类加载机制都遵循这个模型，换言之，这个模型是被破坏过的。双亲委派很好的解决了各个类加载器的基础类的同一问题，基础类是总是被用户代码所调用的API，但是基础类要调用用户的代码的时候，双亲委派就出现了缺陷。比如JNDI服务，属于rt.jar，他需要调用应用程序的代码来实现资源管理，但是启动类加载器并不能识别应用程序代码。因此出现了线程上下文类加载器。这个类加载器由Thread类的setContextClassLoaser（）方法进行设置，如果线程未创建，他将会从主线程中继承一个。JNDI可以使用线程上下文加载器来加载所需要的SPI代码，也就是父类加载器去请求子类加载器加载Class。Java中所有涉及SPI加载的基本上都采用这个方法。</p>
 
       
