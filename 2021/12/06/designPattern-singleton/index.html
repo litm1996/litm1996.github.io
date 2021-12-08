@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>单例模式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为什么要使用单例模式：只需要一个实例的存在，比如一些manage，factory类。 将类注册为bean，让spring来负责单例更简单易用  饿汉式 优点：类加载的时候就会实例化，是线程安全的方法缺点：不用时也会加载  123456789class Singleton1&amp;#123;    private static final Singleton1 INSTANCE &#x3D; new Single">
+  <meta name="description" content="为什么要使用单例模式：只需要一个实例的存在，比如一些manage，factory类。 将类注册为bean，让spring来负责单例更简单易用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="http://example.com/2021/12/06/designPattern-singleton/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="为什么要使用单例模式：只需要一个实例的存在，比如一些manage，factory类。 将类注册为bean，让spring来负责单例更简单易用  饿汉式 优点：类加载的时候就会实例化，是线程安全的方法缺点：不用时也会加载  123456789class Singleton1&amp;#123;    private static final Singleton1 INSTANCE &#x3D; new Single">
+<meta property="og:description" content="为什么要使用单例模式：只需要一个实例的存在，比如一些manage，factory类。 将类注册为bean，让spring来负责单例更简单易用">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-06T02:20:07.000Z">
-<meta property="article:modified_time" content="2021-12-06T02:37:33.913Z">
+<meta property="article:modified_time" content="2021-12-07T02:32:56.399Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
@@ -179,12 +179,14 @@
 <p>为什么要使用单例模式：只需要一个实例的存在，比如一些manage，factory类。</p>
 <p>将类注册为bean，让spring来负责单例更简单易用</p>
 </blockquote>
+<span id="more"></span>
+
 <h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><blockquote>
 <p>优点：类加载的时候就会实例化，是线程安全的方法<br>缺点：不用时也会加载</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton1 INSTANCE = <span class="keyword">new</span> Singleton1();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton1</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton1 <span class="title">getINSTANCE</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id><a href="#" class="headerlink" title></a><span id="more"></span></h3><h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><blockquote>
+<h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><blockquote>
 <p>优点：使用时才加载<br>缺点：多线程访问的时候，拿到的不是同一个实例。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton2</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton2 INSTANCE = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton2</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton2 <span class="title">getINSTANCE</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//多线程访问的时候，这个地方拿到的实例可能不是同一个</span></span><br><span class="line">        <span class="keyword">if</span> (INSTANCE == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="comment">//线程1在始化类的过程中。</span></span><br><span class="line">            <span class="comment">//线程2通过以上的判断也进入到该逻辑，再初始化一个实例</span></span><br><span class="line">            <span class="comment">//两个线程拿到的实例不一样</span></span><br><span class="line">            INSTANCE = <span class="keyword">new</span> Singleton2();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -460,6 +462,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
             
             <div class="clearfix"></div>
