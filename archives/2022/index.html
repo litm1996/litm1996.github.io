@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>Archives: 2022 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/archives/2022/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,38 +152,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-GC-G1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-G1/">GC-G1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-G1/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/GC-G1/" class="archive-article-date">
   	<time datetime="2022-02-15T02:45:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="G1-–-Garbage-First"><a href="#G1-–-Garbage-First" class="headerlink" title="G1 – Garbage First"></a>G1 – Garbage First</h2><p>G1的目标是在可控延迟下获得尽可能高的吞吐量,并且同时作用于老年代新生代。这是过去的垃圾收集器不具备的能力。</p>
-<p>G1是一个并行回收器，他把堆内存分割为多个不相关区域（Region/物理上不连续）。使用不同的region来表示Eden、S1、S2和老年代</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-G1/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/GC-G1/">GC-G1</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,71 +191,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-G1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-GC-垃圾标记算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/">GC-垃圾标记算法</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/" class="archive-article-date">
   	<time datetime="2022-02-15T02:44:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="引用计数（JAVA并未使用）"><a href="#引用计数（JAVA并未使用）" class="headerlink" title="引用计数（JAVA并未使用）"></a>引用计数（JAVA并未使用）</h2><p>引用计数算法比较简单，对每个对象保存一个引用计数器属性，对象被引用就+1，引用失效-1。当值为0的时候可以回收。</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/">GC-垃圾标记算法</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -271,81 +229,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-GC-垃圾收集器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">GC-垃圾收集器</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" class="archive-article-date">
   	<time datetime="2022-02-15T02:44:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="垃圾收集器分类"><a href="#垃圾收集器分类" class="headerlink" title="垃圾收集器分类"></a>垃圾收集器分类</h2><ol>
-<li><p>新生代收集器：</p>
-<p>Serial、ParNew、Parallel Scavenge</p>
-</li>
-<li><p>老年代收集器：</p>
-<p>CMS、Serial Old、Parallel Old</p>
-</li>
-<li><p>整堆：</p>
-<p>G1</p>
-</li>
-</ol>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">GC-垃圾收集器</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -357,75 +267,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-GC-清除算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/">GC-清除算法</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/" class="archive-article-date">
   	<time datetime="2022-02-15T02:44:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="标记清除算法（mark-sweep）"><a href="#标记清除算法（mark-sweep）" class="headerlink" title="标记清除算法（mark sweep）"></a>标记清除算法（mark sweep）</h2><p>分为两个阶段：</p>
-<ol>
-<li>标记：从根节点遍历，标记所有<strong>被引用对象</strong>，记录在header中</li>
-<li>清除：线性遍历堆内存清除header中米有标记的对象</li>
-</ol>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/">GC-清除算法</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -437,71 +305,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-GC-相关概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">GC-相关概念</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" class="archive-article-date">
   	<time datetime="2022-02-15T02:44:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="System-gc"><a href="#System-gc" class="headerlink" title="System.gc()"></a>System.gc()</h2><p>显示触发Full GC，同时对老年代和新生代进行回收，但调用了不一定能够马上执行</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">GC-相关概念</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -513,74 +343,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Sting理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/">Sting理解</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/" class="archive-article-date">
   	<time datetime="2022-02-15T02:43:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>String在1.8及以前使用char[]数组存放，1.9开始使用byte数组存放，原因是大多数字符串都使用拉丁文和ISO-**存放，只需要一个byte就能存放，char是两个byte，因此存在浪费空间。</p>
-<p>–但是中文需要两个字节</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/">Sting理解</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -592,75 +381,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E5%A0%86/">堆</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E5%A0%86/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/%E5%A0%86/" class="archive-article-date">
   	<time datetime="2022-02-15T02:43:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="堆的核心概述"><a href="#堆的核心概述" class="headerlink" title="堆的核心概述"></a>堆的核心概述</h2><p>堆可以处于物理上不连续的空间，但是逻辑上应该是连续的，这里面还划分了TLAB（thread local allocation buffer）</p>
-<p><strong>几乎</strong>所有对象实例和数组都应该分配到堆上。</p>
-<blockquote>
-<p>因为对象经过逃逸分析，可能存在栈上分配</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/02/15/%E5%A0%86/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/%E5%A0%86/">堆</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -672,76 +419,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E5%A0%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-对象创建相关问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">对象创建相关问题</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2022-02-15T02:43:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="对象创建的方式"><a href="#对象创建的方式" class="headerlink" title="对象创建的方式"></a>对象创建的方式</h2><p>new</p>
-<p>Class的newInstance。只能调用空参的pulice构造方法</p>
-<p>Constructor的newInstance。所有构造方法均可调用</p>
-<p>使用Clone。要求实现Cloneable的clone接口</p>
-<p>使用反序列化。从文件、网络中获取对象的二进制流</p>
-<p>第三方库</p>
-        
-          <a class="article-more-a" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">对象创建相关问题</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -753,147 +457,33 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-方法区" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/">方法区</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/" class="archive-article-date">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/" class="archive-article-date">
   	<time datetime="2022-02-15T02:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The Java Virtual Machine has a <em>method area</em> that is shared among all Java Virtual Machine threads. It stores per-class structures such as the <strong>run-time constant pool</strong>, <strong>field</strong> and <strong>method data</strong>, and the code for methods and <strong>constructors</strong>, including the <strong>special methods</strong> (<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.9">§2.9</a>) used in class and <strong>instance initialization and interface initialization</strong>.</p>
-        
-          <a class="article-more-a" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-虚拟机栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/">虚拟机栈</a>
+      <a class="archive-article-title" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/">方法区</a>
     </h1>
   
 
-        
-        <a href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:06:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h2>
-        
-          <a class="article-more-a" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -905,45 +495,57 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/" class="archive-article-date">
+  	<time datetime="2022-02-15T02:06:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/">虚拟机栈</a>
+    </h1>
+  
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+          
 
-
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+    </div></section>
   
+
+    
 
 
           </div>
@@ -965,9 +567,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

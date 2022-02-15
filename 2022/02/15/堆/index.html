@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>堆 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="堆的核心概述堆可以处于物理上不连续的空间，但是逻辑上应该是连续的，这里面还划分了TLAB（thread local allocation buffer） 几乎所有对象实例和数组都应该分配到堆上。  因为对象经过逃逸分析，可能存在栈上分配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="堆">
+<meta property="og:url" content="http://example.com/2022/02/15/%E5%A0%86/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="堆的核心概述堆可以处于物理上不连续的空间，但是逻辑上应该是连续的，这里面还划分了TLAB（thread local allocation buffer） 几乎所有对象实例和数组都应该分配到堆上。  因为对象经过逃逸分析，可能存在栈上分配">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-15T02:43:40.000Z">
+<meta property="article:modified_time" content="2022-02-15T03:10:10.447Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,490 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-GC-G1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-堆" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-G1/">GC-G1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-G1/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:45:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="G1-–-Garbage-First"><a href="#G1-–-Garbage-First" class="headerlink" title="G1 – Garbage First"></a>G1 – Garbage First</h2><p>G1的目标是在可控延迟下获得尽可能高的吞吐量,并且同时作用于老年代新生代。这是过去的垃圾收集器不具备的能力。</p>
-<p>G1是一个并行回收器，他把堆内存分割为多个不相关区域（Region/物理上不连续）。使用不同的region来表示Eden、S1、S2和老年代</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-G1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-G1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-垃圾标记算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/">GC-垃圾标记算法</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="引用计数（JAVA并未使用）"><a href="#引用计数（JAVA并未使用）" class="headerlink" title="引用计数（JAVA并未使用）"></a>引用计数（JAVA并未使用）</h2><p>引用计数算法比较简单，对每个对象保存一个引用计数器属性，对象被引用就+1，引用失效-1。当值为0的时候可以回收。</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-垃圾收集器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">GC-垃圾收集器</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="垃圾收集器分类"><a href="#垃圾收集器分类" class="headerlink" title="垃圾收集器分类"></a>垃圾收集器分类</h2><ol>
-<li><p>新生代收集器：</p>
-<p>Serial、ParNew、Parallel Scavenge</p>
-</li>
-<li><p>老年代收集器：</p>
-<p>CMS、Serial Old、Parallel Old</p>
-</li>
-<li><p>整堆：</p>
-<p>G1</p>
-</li>
-</ol>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-清除算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/">GC-清除算法</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="标记清除算法（mark-sweep）"><a href="#标记清除算法（mark-sweep）" class="headerlink" title="标记清除算法（mark sweep）"></a>标记清除算法（mark sweep）</h2><p>分为两个阶段：</p>
-<ol>
-<li>标记：从根节点遍历，标记所有<strong>被引用对象</strong>，记录在header中</li>
-<li>清除：线性遍历堆内存清除header中米有标记的对象</li>
-</ol>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-相关概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">GC-相关概念</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="System-gc"><a href="#System-gc" class="headerlink" title="System.gc()"></a>System.gc()</h2><p>显示触发Full GC，同时对老年代和新生代进行回收，但调用了不一定能够马上执行</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Sting理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/">Sting理解</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:43:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>String在1.8及以前使用char[]数组存放，1.9开始使用byte数组存放，原因是大多数字符串都使用拉丁文和ISO-**存放，只需要一个byte就能存放，char是两个byte，因此存在浪费空间。</p>
-<p>–但是中文需要两个字节</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E5%A0%86/">堆</a>
+    <h1 class="article-title" itemprop="name">
+      堆
     </h1>
   
 
@@ -651,11 +180,85 @@
 <blockquote>
 <p>因为对象经过逃逸分析，可能存在栈上分配</p>
 </blockquote>
-        
-          <a class="article-more-a" href="/2022/02/15/%E5%A0%86/#more">more >></a>
-        
+<span id="more"></span>
+
+<h3 id="内存细分"><a href="#内存细分" class="headerlink" title="内存细分"></a>内存细分</h3><p><strong>JAVA8以前</strong>分为：老年代 年轻代和永久代。其中还年轻代分为eden、幸存区1和幸存区2</p>
+<p><strong>JAVA8开始</strong>分为：老年代 年轻代和元空间。其中还年轻代分为eden、幸存区1和幸存区2</p>
+<blockquote>
+<p>元空间和永久代和方法区的具体实现。</p>
+</blockquote>
+<h2 id="设置堆内存大小与OOM"><a href="#设置堆内存大小与OOM" class="headerlink" title="设置堆内存大小与OOM"></a>设置堆内存大小与OOM</h2><p>-Xms 起始内存大小 -Xmx 最大内存（设置的是老年代和新生代的大小）</p>
+<p>-X 是JVM的运行参数</p>
+<p>ms memory start</p>
+<p>mx memory max</p>
+<p>默认情况下 起始内存为计算机内存/64 最大内存是计算机内存/4</p>
+<blockquote>
+<p>通常会将两者设置一样大，避免在GC后重新计算内存大小</p>
+</blockquote>
+<h2 id="年轻代与老年代"><a href="#年轻代与老年代" class="headerlink" title="年轻代与老年代"></a>年轻代与老年代</h2><p>默认情况下 老年代2/3 新生代 1/3。在新生代中。E:S1:S2=8:1:1</p>
+<p>参数配置为-XX:NewRatio=2，表示老年代为2，新生代为1</p>
+<p>-XX:NewRatio=3，表示老年代为3，新生代为1</p>
+<p>一般不会修改。除非生命周期长的对象比较多，那么增加老年代的比例</p>
+<p>-XX:SurivorRatio：在实际使用中，E:S1:S2的比例并不是8：1：1。存在自适应情况，除非使用这个命令指定，或者关闭自适应</p>
+<p>几乎所有对象都是在Eden创建，除非放不下这个对象才会进入老年代内存。</p>
+<p>-Xmn可以设置新生代大小，可以覆盖配置-XX:NewRatio</p>
+<h2 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h2><p>GC主要是在三个分区上，新生代、老年代、方法区</p>
+<p>Minor GC：young GC    仅仅是新生代的垃圾回收，一般是eden区满</p>
+<p>Major GC：仅仅是老年代垃圾回收</p>
+<p>Full GC：回收整个堆和方法区，有三种情况会导致：</p>
+<ol>
+<li>System.gc()，系统建议执行，但不一定执行</li>
+<li>老年代不足</li>
+<li>方法区不足</li>
+</ol>
+<h2 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h2><p>首先分配到eden区</p>
+<p>大对象直接分配到老年代（大的字符串和数组），应尽量避免</p>
+<p>达到年龄的对象分配到老年代</p>
+<p>动态年龄判断：如果相同年龄的对象达到幸存区的一半，那么<strong>该年龄及以上</strong>的对象分配到老年代，毋须达到指定年龄</p>
+<blockquote>
+<p>空间分配担保：-XX:HandlePromotionFailure。幸存区空间已满，老年代提供空间给幸存区存放对象，前提是老年代有足够空间</p>
+</blockquote>
+<h2 id="内存分配的优化"><a href="#内存分配的优化" class="headerlink" title="内存分配的优化"></a>内存分配的优化</h2><blockquote>
+<p>JVM在1.6引入了JIT技术，通过逃逸分析为其他代码优化技术提供支持</p>
+</blockquote>
+<h3 id="栈上分配"><a href="#栈上分配" class="headerlink" title="栈上分配"></a>栈上分配</h3><p>通过逃逸分析发现变量仅在改方法中使用，那么该对象就可以创建在栈中，伴随着栈的消亡而结束。避免了分配到堆中，增加GC的频率</p>
+<p>一般会逃逸的场景有全局变量赋值，方法返回值，实例引用传递。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> B b;  </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">globalVariablePointerEscape</span><span class="params">()</span> </span>&#123; <span class="comment">// 给全局变量赋值，发生逃逸</span></span><br><span class="line">        b = <span class="keyword">new</span> B();</span><br><span class="line">    &#125;  </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> B <span class="title">methodPointerEscape</span><span class="params">()</span> </span>&#123; <span class="comment">// 方法返回值，发生逃逸</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> B();</span><br><span class="line">    &#125;  </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">instancePassPointerEscape</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        methodPointerEscape().printClassName(<span class="keyword">this</span>); <span class="comment">// 实例引用传递，发生逃逸</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printClassName</span><span class="params">(A a)</span> </span>&#123;</span><br><span class="line">	    System.out.println(a.class.getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="同步省略（锁消除）"><a href="#同步省略（锁消除）" class="headerlink" title="同步省略（锁消除）"></a>同步省略（锁消除）</h3><p>如果一个对象只能被一个线程访问，那么该对象的锁就没有存在的必要，获取锁是非常消耗性能的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    <span class="keyword">synchronized</span> (user)&#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//该方法中user只会被当前线程访问，因此经过锁消除后，等价于：</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    System.out.println(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="标量替换"><a href="#标量替换" class="headerlink" title="标量替换"></a>标量替换</h3><blockquote>
+<p>标量：无法拆分的数据，如java的基础数据类型</p>
+<p>聚合量：与标量相反，可以拆分的数据就是聚合量，如实体类</p>
+</blockquote>
+<p>如果经过逃逸分析，发现对象没有逃逸，那么就可以拆分成多个成员变量，这就是变量替换。这样不用分配变量，因此不用分配到堆内存</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    A a = <span class="keyword">new</span> A(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;A.a=&quot;</span>+a.getA()+<span class="string">&quot; A.b=&quot;</span>+a.getB());</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> b;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//主函数中的A对象没有逃逸，因此可以使用标量替换，等价于：</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    System.out.println(<span class="string">&quot;A.a=&quot;</span>+a+<span class="string">&quot; A.b=&quot;</span>+b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -675,16 +278,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E5%A0%86/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/15/%E5%A0%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Sting理解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对象创建相关问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -704,245 +375,14 @@
 
 
 
-
-  
-    <article id="post-对象创建相关问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">对象创建相关问题</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:43:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="对象创建的方式"><a href="#对象创建的方式" class="headerlink" title="对象创建的方式"></a>对象创建的方式</h2><p>new</p>
-<p>Class的newInstance。只能调用空参的pulice构造方法</p>
-<p>Constructor的newInstance。所有构造方法均可调用</p>
-<p>使用Clone。要求实现Cloneable的clone接口</p>
-<p>使用反序列化。从文件、网络中获取对象的二进制流</p>
-<p>第三方库</p>
-        
-          <a class="article-more-a" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-方法区" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/">方法区</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The Java Virtual Machine has a <em>method area</em> that is shared among all Java Virtual Machine threads. It stores per-class structures such as the <strong>run-time constant pool</strong>, <strong>field</strong> and <strong>method data</strong>, and the code for methods and <strong>constructors</strong>, including the <strong>special methods</strong> (<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.9">§2.9</a>) used in class and <strong>instance initialization and interface initialization</strong>.</p>
-        
-          <a class="article-more-a" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-虚拟机栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/">虚拟机栈</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:06:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h2>
-        
-          <a class="article-more-a" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -965,8 +405,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

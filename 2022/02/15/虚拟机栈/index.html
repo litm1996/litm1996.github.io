@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>虚拟机栈 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="虚拟机栈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟机栈">
+<meta property="og:url" content="http://example.com/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="虚拟机栈">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pcsdata.baidu.com/thumbnail/0472a2100ke6b8abe70708c43851e220?fid=1102032842980-16051585-332387920335708&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-pJGjB1tbnkad/qHTAZRM2/UL/p8=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video">
+<meta property="og:image" content="https://pcsdata.baidu.com/thumbnail/a703d7214u3a69aab8afa7454c7d92a5?fid=1102032842980-16051585-784256084551716&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-hTdr63MHAcXe/vCQ+kPyi9Pnymo=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video">
+<meta property="og:image" content="https://pcsdata.baidu.com/thumbnail/b31996a91o7fcd429ba20c83ddf00eec?fid=1102032842980-16051585-219986093176165&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-XlXNkGr1/hkwUlMvRswY+JBkTkg=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video">
+<meta property="og:image" content="https://pcsdata.baidu.com/thumbnail/e71792f1bq80b5a025660fd433b25cd2?fid=1102032842980-16051585-886492879489275&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-aQGL6gZpNTkQUHuXlnu3e9GQrjU=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video">
+<meta property="og:image" content="https://pcsdata.baidu.com/thumbnail/4853b7e6cj7cf27e26a72ae3e54598aa?fid=1102032842980-16051585-96008323119843&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-rhNMvIs08iwc+x61m0iIhexYBIk=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video">
+<meta property="article:published_time" content="2022-02-15T02:06:42.000Z">
+<meta property="article:modified_time" content="2022-02-15T03:10:19.641Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pcsdata.baidu.com/thumbnail/0472a2100ke6b8abe70708c43851e220?fid=1102032842980-16051585-332387920335708&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-pJGjB1tbnkad/qHTAZRM2/UL/p8=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,727 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-GC-G1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-虚拟机栈" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-G1/">GC-G1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-G1/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:45:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="G1-–-Garbage-First"><a href="#G1-–-Garbage-First" class="headerlink" title="G1 – Garbage First"></a>G1 – Garbage First</h2><p>G1的目标是在可控延迟下获得尽可能高的吞吐量,并且同时作用于老年代新生代。这是过去的垃圾收集器不具备的能力。</p>
-<p>G1是一个并行回收器，他把堆内存分割为多个不相关区域（Region/物理上不连续）。使用不同的region来表示Eden、S1、S2和老年代</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-G1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-G1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-垃圾标记算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/">GC-垃圾标记算法</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="引用计数（JAVA并未使用）"><a href="#引用计数（JAVA并未使用）" class="headerlink" title="引用计数（JAVA并未使用）"></a>引用计数（JAVA并未使用）</h2><p>引用计数算法比较简单，对每个对象保存一个引用计数器属性，对象被引用就+1，引用失效-1。当值为0的时候可以回收。</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%A0%87%E8%AE%B0%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-垃圾收集器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">GC-垃圾收集器</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="垃圾收集器分类"><a href="#垃圾收集器分类" class="headerlink" title="垃圾收集器分类"></a>垃圾收集器分类</h2><ol>
-<li><p>新生代收集器：</p>
-<p>Serial、ParNew、Parallel Scavenge</p>
-</li>
-<li><p>老年代收集器：</p>
-<p>CMS、Serial Old、Parallel Old</p>
-</li>
-<li><p>整堆：</p>
-<p>G1</p>
-</li>
-</ol>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-清除算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/">GC-清除算法</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="标记清除算法（mark-sweep）"><a href="#标记清除算法（mark-sweep）" class="headerlink" title="标记清除算法（mark sweep）"></a>标记清除算法（mark sweep）</h2><p>分为两个阶段：</p>
-<ol>
-<li>标记：从根节点遍历，标记所有<strong>被引用对象</strong>，记录在header中</li>
-<li>清除：线性遍历堆内存清除header中米有标记的对象</li>
-</ol>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GC-相关概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">GC-相关概念</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:44:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="System-gc"><a href="#System-gc" class="headerlink" title="System.gc()"></a>System.gc()</h2><p>显示触发Full GC，同时对老年代和新生代进行回收，但调用了不一定能够马上执行</p>
-        
-          <a class="article-more-a" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/GC-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Sting理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/">Sting理解</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:43:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>String在1.8及以前使用char[]数组存放，1.9开始使用byte数组存放，原因是大多数字符串都使用拉丁文和ISO-**存放，只需要一个byte就能存放，char是两个byte，因此存在浪费空间。</p>
-<p>–但是中文需要两个字节</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/Sting%E7%90%86%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E5%A0%86/">堆</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E5%A0%86/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:43:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="堆的核心概述"><a href="#堆的核心概述" class="headerlink" title="堆的核心概述"></a>堆的核心概述</h2><p>堆可以处于物理上不连续的空间，但是逻辑上应该是连续的，这里面还划分了TLAB（thread local allocation buffer）</p>
-<p><strong>几乎</strong>所有对象实例和数组都应该分配到堆上。</p>
-<blockquote>
-<p>因为对象经过逃逸分析，可能存在栈上分配</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/02/15/%E5%A0%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E5%A0%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-对象创建相关问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">对象创建相关问题</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:43:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="对象创建的方式"><a href="#对象创建的方式" class="headerlink" title="对象创建的方式"></a>对象创建的方式</h2><p>new</p>
-<p>Class的newInstance。只能调用空参的pulice构造方法</p>
-<p>Constructor的newInstance。所有构造方法均可调用</p>
-<p>使用Clone。要求实现Cloneable的clone接口</p>
-<p>使用反序列化。从文件、网络中获取对象的二进制流</p>
-<p>第三方库</p>
-        
-          <a class="article-more-a" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-方法区" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/">方法区</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/" class="archive-article-date">
-  	<time datetime="2022-02-15T02:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The Java Virtual Machine has a <em>method area</em> that is shared among all Java Virtual Machine threads. It stores per-class structures such as the <strong>run-time constant pool</strong>, <strong>field</strong> and <strong>method data</strong>, and the code for methods and <strong>constructors</strong>, including the <strong>special methods</strong> (<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.9">§2.9</a>) used in class and <strong>instance initialization and interface initialization</strong>.</p>
-        
-          <a class="article-more-a" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-虚拟机栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/">虚拟机栈</a>
+    <h1 class="article-title" itemprop="name">
+      虚拟机栈
     </h1>
   
 
@@ -883,12 +181,170 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h2>
-        
-          <a class="article-more-a" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/#more">more >></a>
-        
+        <h2 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h2><span id="more"></span>
+
+<h3 id="运行方式"><a href="#运行方式" class="headerlink" title="运行方式"></a>运行方式</h3><p> <img src="https://pcsdata.baidu.com/thumbnail/0472a2100ke6b8abe70708c43851e220?fid=1102032842980-16051585-332387920335708&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-pJGjB1tbnkad/qHTAZRM2/UL/p8=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video" alt="img"> </p>
+<ol>
+<li>不同线程的栈帧不能相互访问，线程隔离。</li>
+<li><strong>当前栈帧</strong>执行结束后会将结果返回给前一个栈帧，然后弹出，前一个栈帧成为当前栈帧。</li>
+<li>有两种返回结果的方式：return和抛出异常。都会传递到前一个栈帧，当前栈帧弹出。</li>
+</ol>
+<blockquote>
+<p>当前栈帧：指栈顶栈帧，也就是当前正在执行的栈帧。</p>
+</blockquote>
+<h3 id="栈帧结构"><a href="#栈帧结构" class="headerlink" title="栈帧结构"></a>栈帧结构</h3><p>包含5部分</p>
+<ol>
+<li>局部变量表***</li>
+<li>操作数栈***</li>
+<li>动态链接 指向运行时常量池方法的引用*</li>
+<li>方法返回地址*</li>
+<li>一些附加信息*</li>
+</ol>
+<h3 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h3><p> <img src="https://pcsdata.baidu.com/thumbnail/a703d7214u3a69aab8afa7454c7d92a5?fid=1102032842980-16051585-784256084551716&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-hTdr63MHAcXe/vCQ+kPyi9Pnymo=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video" alt="img"> </p>
+<p>局部变量表是一个数字数组，存储形参和方法体内部变量，数据类型包含基本数据类型、对象引用和返回地址</p>
+<p>局部变量表在编译期就会确定，保存在maximum local variables，运行期间不会改变</p>
+<blockquote>
+<p>基本数据类型中char、short也可以看作是数值，Boolean 0表示false，非0就是true（ASCII码）32位系统只占用一个变量槽（局部变量表最基本的单元，类似于List&lt;&gt;中的一个item），64位系统中long和double占用两个。double和long引用的时候用起始位置。</p>
+<p>变量槽是可以回收的，当变量的作用域结束后可以回收，变量槽放入新的变量</p>
+</blockquote>
+<blockquote>
+<p> 图中静态变量表第一个this：在非静态方法的局部变量表的第一个位置上存储的是该方法所属对象的引用，即this变量。 </p>
+</blockquote>
+<h4 id="操作数栈"><a href="#操作数栈" class="headerlink" title="操作数栈"></a>操作数栈</h4><ol>
+<li>操作数栈和局部变量表一样是定长数组，不一样的是，局部变量表是索引访问，操作数栈是通过出栈入栈访问。可以理解为一个用于计算的临时区域。</li>
+<li>储存类型与局部变量表一致，包含基本类型、引用类型和返回地址。</li>
+<li>数据运算时，先弹出数据，运算完成后将结果压入栈中。</li>
+<li>方法执行完成后会将栈顶元素返回给前一个栈帧。</li>
+</ol>
+<p> <img src="https://pcsdata.baidu.com/thumbnail/b31996a91o7fcd429ba20c83ddf00eec?fid=1102032842980-16051585-219986093176165&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-XlXNkGr1/hkwUlMvRswY+JBkTkg=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video" alt="img"> </p>
+<p>上图为简略的代码执行过程。大致为：</p>
+<ul>
+<li>0：将数值15压入操作数栈</li>
+<li>2：取出栈顶元素，存放到局部变量表索引为1 的位置</li>
+<li>3：将数值8压入操作数栈</li>
+<li>5：取出栈顶元素，存放到局部变量表索引为2 的位置</li>
+<li>6：获取局部变量表索引为1的元素，压入操作数栈</li>
+<li>7：获取局部变量表索引为2的元素，压入操作数栈</li>
+<li>8：将操作数栈的元素取出，由执行引擎交由CPU计算，然后将结果压入操作数栈</li>
+<li>9：取出栈顶元素，存放到局部变量表索引为3 的位置</li>
+<li>10：获取局部变量表索引为3的元素，压入操作数栈</li>
+<li>11：将栈顶元素返回给前一个栈帧，弹出当前栈帧。前一个栈帧会将返回值压入操作数栈。</li>
+</ul>
+<blockquote>
+<p>非静态方法局部变量表的索引起始位应为0，存放的this元素，该图未体现出来。</p>
+</blockquote>
+<h5 id="i-和-i的问题"><a href="#i-和-i的问题" class="headerlink" title="i++和++i的问题"></a>i++和++i的问题</h5><p> <img src="https://pcsdata.baidu.com/thumbnail/e71792f1bq80b5a025660fd433b25cd2?fid=1102032842980-16051585-886492879489275&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-aQGL6gZpNTkQUHuXlnu3e9GQrjU=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video" alt="img"> </p>
+<p>以上为源码和字节码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> bipush <span class="number">10</span>	<span class="comment">//将10压入操作数栈</span></span><br><span class="line"><span class="number">2</span> istore_1		<span class="comment">//将栈顶元素(10)放到局部变量表索引为1的位置</span></span><br><span class="line"><span class="number">3</span> iload_1		<span class="comment">//将索引为1的变量压入操作数栈(10)</span></span><br><span class="line"><span class="number">4</span> iinc <span class="number">1</span> by <span class="number">1</span>	<span class="comment">//局部变量表索引为1的元素自增1(11) s变为11</span></span><br><span class="line"><span class="number">7</span> istore_2		<span class="comment">//将栈顶元素(10)放到局部变量表索引为2的位置 s1为10</span></span><br></pre></td></tr></table></figure>
+
+<p>以上是S++的执行逻辑。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">8</span> bipush <span class="number">10</span>	<span class="comment">//将10压入操作数栈</span></span><br><span class="line"><span class="number">10</span> istore_3		<span class="comment">//将栈顶元素(10)放到局部变量表索引为3的位置</span></span><br><span class="line"><span class="number">11</span> iinc <span class="number">3</span> by <span class="number">1</span>	<span class="comment">//局部变量表索引为3的元素自增1(11) m变为11</span></span><br><span class="line"><span class="number">14</span> iload_3		<span class="comment">//将索引为3的变量压入操作数栈(11)</span></span><br><span class="line"><span class="number">15</span> istore <span class="number">4</span>		<span class="comment">//将栈顶元素(11)放到局部变量表索引为4的位置 m1为11</span></span><br></pre></td></tr></table></figure>
+
+<p>以上是++M的执行逻辑。</p>
+<p>我们可以看见，他们只是将第三第四步，自增和入栈进行了交换，让新的变量的赋值发生了改变。</p>
+<p>栈顶缓存？</p>
+<h3 id="动态链接"><a href="#动态链接" class="headerlink" title="动态链接"></a>动态链接</h3><p>栈帧中存在着指向<strong>运行时常量池</strong>中该方法的引用，目的是实现动态链接</p>
+<p>在编译为字节码的时候，所有的变量和方法都会变成符号引用（这样才能保持每个class独立，不用把引用过的每个类都包含到一个class文件中）保存在类的常量池中，在调用时会首先找到常量池中的引用，然后再去运行时常量池中找到对应的类和方法。动态链接就是将符号引用转换为直接引用</p>
+<p> <img src="https://pcsdata.baidu.com/thumbnail/4853b7e6cj7cf27e26a72ae3e54598aa?fid=1102032842980-16051585-96008323119843&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-rhNMvIs08iwc+x61m0iIhexYBIk=&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=9124366708135357726&dp-callid=0&time=1644890400&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video" alt="img"> </p>
+<p>上图为如何确定一个符号引用。</p>
+<h3 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h3><p>符号引用转换为直接引用与方法的绑定方式有关。</p>
+<p>在Java中有两种链接方式：</p>
+<p>​    静态链接：</p>
+<p>​        被调用的方法在编译器可以被找到，且在运行期不会发生改变，那么就是静态链接</p>
+<p>​    动态链接:</p>
+<p>​        编译期不能确定的被调用方法，只能在运行时期绑定。</p>
+<p>和以上链接方式对应的方法为：</p>
+<p>​    静态链接–早期绑定</p>
+<p>​    动态链接–晚期绑定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodBind</span> <span class="keyword">extends</span> <span class="title">Father</span> <span class="keyword">implements</span> <span class="title">InterFace</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iInterface</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">father</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 静态链接 父类方法已经确定不会改变，且可以在编译期找到，因此为静态链接，早期绑定</span></span><br><span class="line"><span class="comment">         * 1 invokespecial #2 &lt;stack/Father.father : ()V&gt;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">super</span>.father();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestM</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFather</span><span class="params">(Father father)</span></span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 动态链接 不能确定子类实现，只能在运行时期确定</span></span><br><span class="line"><span class="comment">         * 1 invokevirtual #2 &lt;stack/Father.father : ()V&gt;</span></span><br><span class="line"><span class="comment">         * 4 return</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        father.father();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testInterface</span><span class="params">(InterFace iInterface)</span></span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 动态链接 不能确定实现类，只能在运行时期确定</span></span><br><span class="line"><span class="comment">         * 1 invokeinterface #3 &lt;stack/InterFace.iInterface : ()V&gt; count 1</span></span><br><span class="line"><span class="comment">         * 6 return</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        iInterface.iInterface();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">father</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">InterFace</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">iInterface</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>由于JAVA语言的多态性，在编译期不能确定具体实现，因此出现了早期绑定和晚期绑定。</p>
+</blockquote>
+<blockquote>
+<p>编译期不能确定的方法都叫<strong>虚方法</strong>，JAVA语言的任何一个普通方法都具备虚方法的特征，相当于C++的虚函数，如果不需要该特征，使用final修饰即可</p>
+</blockquote>
+<h4 id="虚方法和非虚方法"><a href="#虚方法和非虚方法" class="headerlink" title="虚方法和非虚方法"></a>虚方法和非虚方法</h4><h5 id="非虚方法"><a href="#非虚方法" class="headerlink" title="非虚方法"></a>非虚方法</h5><p>编译期确定了具体调用对象，运行期不会发生改变的方法称为虚方法。主要包含：</p>
+<p>静态方法、私有方法、final方法、实例构造器、父类方法都是非虚方法。</p>
+<blockquote>
+<p>可以理解为不能被重写的方法，就不能改变，那么就是非虚方法</p>
+</blockquote>
+<h5 id="虚方法"><a href="#虚方法" class="headerlink" title="虚方法"></a>虚方法</h5><p>除了非虚方法就是虚方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VirtualMethod</span> <span class="keyword">extends</span> <span class="title">F</span> <span class="keyword">implements</span> <span class="title">I</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 私有方法 私有方法是确定的</span></span><br><span class="line"><span class="comment">         *  1 invokespecial #2 &lt;stack/VirtualMethod.privateMethod : ()V&gt;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        privateMethod();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 父类final方法 final是确定的</span></span><br><span class="line"><span class="comment">         *  5 invokevirtual #3 &lt;stack/VirtualMethod.fatherFinalMethod : ()V&gt;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        fatherFinalMethod();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 父类静态方法 父类静态方法是确定的</span></span><br><span class="line"><span class="comment">         *  8 invokestatic #4 &lt;stack/VirtualMethod.fatherStaticMethod : ()V&gt;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        fatherStaticMethod();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 父类普通方法 可以被重写，并不能确定</span></span><br><span class="line"><span class="comment">         * 12 invokevirtual #5 &lt;stack/VirtualMethod.fatherMethod : ()V&gt;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        fatherMethod();</span><br><span class="line">        I i = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 接口方法 需要被实现，不能确定</span></span><br><span class="line"><span class="comment">         * 18 invokeinterface #6 &lt;stack/I.interfaceMethod : ()V&gt; count 1</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        i.interfaceMethod();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 普通方法 可以被重写，不能确定</span></span><br><span class="line"><span class="comment">         * 24 invokevirtual #7 &lt;stack/VirtualMethod.method : ()V&gt;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        method();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interfaceMethod</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">privateMethod</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">F</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fatherStaticMethod</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">fatherFinalMethod</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fatherMethod</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">interfaceMethod</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>普通调用指令</p>
+<p>​    invokespecial：调用静态方法指令，表示非虚方法</p>
+<p>​    invokestatic：调用init、私有和父类方法，表示非虚方法</p>
+<p>​    invokevirtual：调用所有虚方法（除final修饰的方法外）表示虚方法</p>
+<p>​    invokeinterface：调用接口方法，表示虚方法</p>
+<p>动态调用指令</p>
+<p>​    invokedynamic：动态解析出需要调用的方法执行</p>
+</blockquote>
+<h5 id="invokedynamic"><a href="#invokedynamic" class="headerlink" title="invokedynamic"></a>invokedynamic</h5><p>invokedynamic指令是动态调用指令，是java为了支持动态类型语言支持而做的改进。jdk1.7中已经存在，1.8中使用lambda表达式的时候，该指令被显示使用。</p>
+<p>示例如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Lambda</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Object&gt; objects = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        Function func = s -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        objects.stream().flatMap(func);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  0 new #2 &lt;java/util/ArrayList&gt;</span></span><br><span class="line"><span class="comment">     *  3 dup</span></span><br><span class="line"><span class="comment">     *  4 invokespecial #3 &lt;java/util/ArrayList.&lt;init&gt; : ()V&gt;</span></span><br><span class="line"><span class="comment">     *  7 astore_1</span></span><br><span class="line"><span class="comment">     *  8 invokedynamic #4 &lt;apply, BootstrapMethods #0&gt;  **该行表示 Function func = s -&gt; &#123;  &#125;;</span></span><br><span class="line"><span class="comment">     * 13 astore_2</span></span><br><span class="line"><span class="comment">     * 14 aload_1</span></span><br><span class="line"><span class="comment">     * 15 invokevirtual #5 &lt;java/util/ArrayList.stream : ()Ljava/util/stream/Stream;&gt;</span></span><br><span class="line"><span class="comment">     * 18 aload_2</span></span><br><span class="line"><span class="comment">     * 19 invokeinterface #6 &lt;java/util/stream/Stream.flatMap : (Ljava/util/function/Function;)Ljava/util/stream/Stream;&gt; count 2</span></span><br><span class="line"><span class="comment">     * 24 pop</span></span><br><span class="line"><span class="comment">     * 25 return</span></span><br><span class="line"><span class="comment">     */</span></span><br></pre></td></tr></table></figure>
+
+<p>lambda表示式的返回值不能被确定，所以使用该字节码指令来表示动态加载。</p>
+<blockquote>
+<p>因为方法的重写导致了以上虚方法的出现</p>
+</blockquote>
+<h4 id="方法重写的本质"><a href="#方法重写的本质" class="headerlink" title="方法重写的本质"></a>方法重写的本质</h4><p>查找虚方法的过程：</p>
+<ol>
+<li>找到操作数栈顶端的第一个元素的实际类型，标记为C。</li>
+<li>如果在C中找到了描述和简单名称都符合的方法，那么进行权限校验，通过则返回方法的直接引用，不通过则返回异常。</li>
+<li>如果没有找到，那么就在其父类中继续进行步骤2的操作</li>
+<li>最终都没找到就抛出AbstractMethodException</li>
+</ol>
+<h5 id="虚方法表"><a href="#虚方法表" class="headerlink" title="虚方法表"></a>虚方法表</h5><p>在查找虚方法的过程中需要循环查找，浪费时间，因此在类解析阶段在方法区中创建虚方法表，直接指向正确的方法。</p>
+<h3 id="方法返回地址"><a href="#方法返回地址" class="headerlink" title="方法返回地址"></a>方法返回地址</h3><p>方法返回地址存放的是pc寄存器的值。</p>
+<p>方法有两种运行结束方式：</p>
+<ol>
+<li>正常执行完成</li>
+<li>抛出异常</li>
+</ol>
+<p>无论是哪种方式，都会回到调用该方法的地方继续执行。区别是，正常执行完成后，执行引擎直接执行返回地址的值，也就是调用者的值，当方式异常退出的时候，返回地址需要通过异常表来确定，栈帧中不会保存</p>
+<blockquote>
+<p>异常表的存放位置在class文件的code属性中</p>
+</blockquote>
+<p>字节码指令中，返回指令有ireturn（当返回值是Boolean、byte、char、short、int时）、lrrturn（long）、freturn（float）、dreturn（double）、areturn (引用类型)。如果是void就是return</p>
+<h4 id="延申-异常处理机制"><a href="#延申-异常处理机制" class="headerlink" title="延申-异常处理机制"></a>延申-异常处理机制</h4><p><a target="_blank" rel="noopener" href="https://blog.liexing.me/2017/09/17/java-exception-table/">Java 异常表与异常处理原理</a></p>
+<p>例子：</p>
+<p>源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            a = <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (NullPointerException e)&#123;</span><br><span class="line">            a = <span class="number">2</span>;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (RuntimeException e)&#123;</span><br><span class="line">            a = <span class="number">2</span>;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            a = <span class="number">3</span>;</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            a = <span class="number">4</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>字节指令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">0</span>: iconst_1</span><br><span class="line"> <span class="number">1</span>: istore_1</span><br><span class="line"> <span class="number">2</span>: iconst_4</span><br><span class="line"> <span class="number">3</span>: istore_1</span><br><span class="line"> <span class="number">4</span>: goto          <span class="number">36</span></span><br><span class="line"> <span class="number">7</span>: astore_2</span><br><span class="line"> <span class="number">8</span>: iconst_2</span><br><span class="line"> <span class="number">9</span>: istore_1</span><br><span class="line"><span class="number">10</span>: iconst_4</span><br><span class="line"><span class="number">11</span>: istore_1</span><br><span class="line"><span class="number">12</span>: goto          <span class="number">36</span></span><br><span class="line"><span class="number">15</span>: astore_2</span><br><span class="line"><span class="number">16</span>: iconst_2</span><br><span class="line"><span class="number">17</span>: istore_1</span><br><span class="line"><span class="number">18</span>: iconst_4</span><br><span class="line"><span class="number">19</span>: istore_1</span><br><span class="line"><span class="number">20</span>: goto          <span class="number">36</span></span><br><span class="line"><span class="number">23</span>: astore_2</span><br><span class="line"><span class="number">24</span>: iconst_3</span><br><span class="line"><span class="number">25</span>: istore_1</span><br><span class="line"><span class="number">26</span>: iconst_4</span><br><span class="line"><span class="number">27</span>: istore_1</span><br><span class="line"><span class="number">28</span>: goto          <span class="number">36</span></span><br><span class="line"><span class="number">31</span>: astore_3</span><br><span class="line"><span class="number">32</span>: iconst_4</span><br><span class="line"><span class="number">33</span>: istore_1</span><br><span class="line"><span class="number">34</span>: aload_3</span><br><span class="line"><span class="number">35</span>: athrow</span><br><span class="line"><span class="number">36</span>: <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p>异常表：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Exception table:</span><br><span class="line">         from    to  target type</span><br><span class="line">             <span class="number">0</span>     <span class="number">2</span>     <span class="number">7</span>   Class java/lang/NullPointerException</span><br><span class="line">             <span class="number">0</span>     <span class="number">2</span>    <span class="number">15</span>   Class java/lang/RuntimeException</span><br><span class="line">             <span class="number">0</span>     <span class="number">2</span>    <span class="number">23</span>   Class java/lang/Exception</span><br><span class="line">             <span class="number">0</span>     <span class="number">2</span>    <span class="number">31</span>   any</span><br><span class="line">             <span class="number">7</span>    <span class="number">10</span>    <span class="number">31</span>   any</span><br><span class="line">            <span class="number">15</span>    <span class="number">18</span>    <span class="number">31</span>   any</span><br><span class="line">            <span class="number">23</span>    <span class="number">26</span>    <span class="number">31</span>   any</span><br></pre></td></tr></table></figure>
+
+<p>在[0,2)行的指令出现了type类型异常就会跳转到target</p>
+<h3 id="附加信息"><a href="#附加信息" class="headerlink" title="附加信息"></a>附加信息</h3><p>根据虚拟机实现，不一定有</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -908,16 +364,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/15/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/02/15/%E6%96%B9%E6%B3%95%E5%8C%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          方法区
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/08/JVM-ClassLoader/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">类加载器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -937,12 +461,14 @@
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+
   
 
 
@@ -965,8 +491,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
